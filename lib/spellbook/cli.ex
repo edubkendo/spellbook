@@ -7,19 +7,30 @@ defmodule Spellbook.CLI do
   def main(argv) do
     argv
     |> parse_args
-    |> process    
+    |> process
+    |> out
   end
 
-  def process(:help) do
-    IO.puts """
-    usage: spellbook --code <code>
-    """
+  def out({ :yes, _, completions }) do
+    for c <- completions, do: IO.puts(c)
     System.halt(0)
   end
 
+  def out(str) do
+    IO.puts str
+    System.halt(0)
+  end
+
+  def process(:help) do
+    """
+    usage: spellbook --code <code>
+    """
+  end
+
   def process(%{ code: code }) do
-    { :yes, _, completions } = String.to_char_list(code) |> Spellbook.Completions.complete
-    for c <- completions, do: IO.puts(c)
+    code
+    |> String.to_char_list
+    |> Spellbook.Completions.complete
   end
 
   @doc """
