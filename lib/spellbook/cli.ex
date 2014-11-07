@@ -1,4 +1,3 @@
-require IEx
 defmodule Spellbook.CLI do
 
   @moduledoc """

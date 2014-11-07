@@ -13,7 +13,7 @@ defmodule Spellbook.Mixfile do
   #
   # Type `mix help compile.app` for more information
   def application do
-    [applications: [:logger],
+    [applications: [:logger, :elixir, :iex],
      mod: {Spellbook, []}]
   end
 
@@ -31,6 +31,9 @@ defmodule Spellbook.Mixfile do
   end
 
   defp escript_config do
-    [ main_module: Spellbook.CLI ]
+    [
+        main_module: Spellbook.CLI,
+        embed_elixir: true
+    ]
   end
 end
