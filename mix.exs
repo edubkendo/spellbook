@@ -5,6 +5,7 @@ defmodule Spellbook.Mixfile do
     [app: :spellbook,
      version: "0.0.1",
      elixir: "~> 1.0",
+     escript: escript_config,
      deps: deps]
   end
 
@@ -27,5 +28,9 @@ defmodule Spellbook.Mixfile do
   # Type `mix help deps` for more examples and options
   defp deps do
     []
+  end
+
+  defp escript_config do
+    [ main_module: Spellbook.CLI ]
   end
 end

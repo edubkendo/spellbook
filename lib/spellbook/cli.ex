@@ -5,8 +5,9 @@ defmodule Spellbook.CLI do
   Take in code from the command line and return a list of completions.
   """
 
-  def run(argv) do
-    parse_args(argv)
+  def main(argv) do
+    argv
+    |> parse_args
     |> process    
   end
 
