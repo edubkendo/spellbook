@@ -3,6 +3,10 @@ Spellbook
 
 A tool for generating code completions from your editor.
 
+## Install
+
+Add the `spellbook` binary to your PATH.
+
 ## Usage
 
 usage: spellbook --code <code>
