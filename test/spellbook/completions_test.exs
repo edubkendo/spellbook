@@ -1,7 +1,7 @@
 defmodule Spellbook.CompletionsTest do
   use ExUnit.Case
 
-	@example 'IO.'
+  @example 'IO.'
 
   test "should return completions" do
 		{:yes, _, completions} = Spellbook.Completions.complete @example
